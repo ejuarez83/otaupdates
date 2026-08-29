@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Configuraci&oacute;n</title>
+<link rel='stylesheet' href='/style.css'>
+</head><body>
+<div class='wrap'>
+<div class='brand'><span class='dot'></span><h1>Configuraci&oacute;n</h1></div>
+
+<div class='card'>
+<h2>Red WiFi</h2>
+<div class='row'><span>SSID</span><span>{{SSID}}</span></div>
+<div class='row'><span>Direcci&oacute;n IP</span><span>{{IP}}</span></div>
+<form method='POST' action='/resetwifi' onsubmit="return confirm('El dispositivo se reiniciará en modo configuración de WiFi. ¿Continuar?');">
+<button class='btn btn-danger' type='submit'>Reconfigurar WiFi</button>
+</form>
+</div>
+
+<div class='card'>
+<h2>SinricPro</h2>
+<form method='POST' action='/config'>
+<label>Device ID</label><input type='text' name='deviceid' value='{{DEVICE_ID}}'>
+<label>API Key</label><input type='text' name='apikey' value='{{API_KEY}}'>
+<label>API Secret</label><input type='text' name='apisecret' value='{{API_SECRET}}'>
+<button class='btn btn-primary' type='submit'>Guardar y reiniciar</button>
+</form>
+</div>
+
+<div class='card'>
+<h2>Interfaz</h2>
+<div class='state-sub' style='margin-bottom:8px'>Descarga la &uacute;ltima versi&oacute;n de esta interfaz desde tu repositorio de Git (no requiere reflashear el firmware).</div>
+<form method='POST' action='/update-ui' onsubmit="return confirm('¿Descargar la interfaz más reciente desde GitHub?');">
+<button class='btn btn-secondary' type='submit'>Actualizar interfaz desde GitHub</button>
+</form>
+</div>
+
+<a class='back' href='/'>&larr; Volver al interruptor</a>
+</div>
+</body></html>

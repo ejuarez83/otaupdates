@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Smart Switch</title>
+<link rel='stylesheet' href='/style.css'>
+</head><body>
+<div class='wrap'>
+<div class='brand'><span class='dot'></span><h1>ESP01 Smart Switch</h1></div>
+
+<div class='card'>
+<form method='POST' action='{{TOGGLE_ACTION}}'>
+<div class='state-row'>
+<div>
+<div class='state-label {{STATE_CLASS}}'>{{STATE_TEXT}}</div>
+<div class='state-sub'>Rel&eacute; principal</div>
+</div>
+<label class='switch'>
+<input type='checkbox' {{CHECKED}} onchange='this.form.submit()'>
+<span class='slider'></span>
+</label>
+</div>
+</form>
+</div>
+
+<a class='back' href='/config'>&#9881;&#65039; Configuraci&oacute;n &rarr;</a>
+</div>
+</body></html>
